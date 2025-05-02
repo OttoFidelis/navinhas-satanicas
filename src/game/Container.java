@@ -1,5 +1,6 @@
 package game;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import game.model.Stage;
@@ -13,6 +14,8 @@ public class Container extends JFrame {
         setLocationRelativeTo(null);
         this.setResizable(false);
         setVisible(true);
+        ImageIcon ref = new ImageIcon("resources\\Player ship\\player002.png");
+        setIconImage(ref.getImage());
     }
 
     public static void main(String[] args){
