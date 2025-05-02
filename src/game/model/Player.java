@@ -29,7 +29,7 @@ public class Player {
 
     public Player(){
         this.x = 1024/2;
-        this.y = 720/2;
+        this.y = 728/2;
 
         playerShots = new ArrayList<PlayerShot>();
     }
@@ -63,10 +63,12 @@ public class Player {
 
         if(pressedKeys.contains(KeyEvent.VK_W)){
             dy=pressedKeys.contains(KeyEvent.VK_SHIFT) ? -FOCUS_SPEED:-SPEED;
+            dy= y<=0 ? 0:dy;
         }
         if(pressedKeys.contains(KeyEvent.VK_S)){
             dy=pressedKeys.contains(KeyEvent.VK_SHIFT) ? FOCUS_SPEED:SPEED;
-        }
+            dy=y>=SCREEN_HEIGHT- height*6 ? 0:dy;
+        } 
         if(pressedKeys.contains(KeyEvent.VK_A)){
             dx=pressedKeys.contains(KeyEvent.VK_SHIFT) ? -FOCUS_SPEED:-SPEED;
         }
